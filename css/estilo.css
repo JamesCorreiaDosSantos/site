@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+*{
+	/*este deixa todo o conteudo da pagina 
+	como se estivese em uma caixa, ajudando
+	na responsividade*/
+	box-sizing:border-box;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	margin:0;
+
+	background:#D0A9F5;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+
+	/* pode colocar a fonte assim tb: font-family: arial; */
+	letter-spacing:1.5px;
+	 
+}
+
+	/* aqui esta pegando a imagem e nao a class,
+	pois a imagem nao vai ser utilizada em varias coisas*/ 
+	/*este comando deixa as imagems responsivas*/
+img{
+	display:block;
+	/*largura maxima*/
+	max-width:100%;
+}
+
+
+
+
+.info_img{
+	height:200px;
+	width:500px;
+}
+
+.image-banner{
+	height:250px;
+	width:100%;
+}
+
+.header{
+
+	height:60px;
+	/*aqui foi deixado para deixar mais
+	 visivel a parte grafica, mais pode
+	 tirar o background*/
+}
+
+.header .conteudo{
+	display:flex;
+	justify-content:space-between;
+
+}
+
+.header .conteudo{
+	margin:0;
+		
+}
+
+.main .conteudo{
+	margin:0 5px;
+	width:99%;	
+
+}
+
+.logo{
+	margin-top:10px;
+
+}
+
+.logo, .icon-menu{
+	margin:5px 10px;
+	color:purple;
+}
+
+.icon-menu{
+	display:block;
+	width:30px;
+	height:30px;
+	background:purple;
+	border-radius:5px;
+	cursor:pointer;
+}
+
+.nav{
+	position:absolute;
+	top:45px;
+	/*aqui o left -100% esta minimizando
+	para fazer o efeito de transicao 
+	juntamente com a classe .mostrar que
+	 esta la no js*/
+	left:-100%;
+	width:159px;
+	transition:all 0.4s;
+		
+}
+	
+.menu{
+	list-style:none;
+	padding:0;
+	margin:0;
+
+
+}
+
+.menu_link{
+	display:block;
+	padding:4px;
+	background:purple;
+	text-decoration:none;
+	color:white;
+	font-size:13px;
+
+}
+
+.menu_link:hover, .select{
+	background:grey;
+	color:white;
+
+}
+
+/*esta classe ajuda no menu amburguer ela
+faz a alternancia para 0% juntamente com o
+javaScript*/
+.mostrar{
+	left:0%;
+}
+
+.banner{
+	margin-top:-60px;
+	z-index:-1000;
+	position:relative;
+	margin-bottom:20px;
+
+
+}
+
+
+
+.banner .conteudo{
+	position:absolute;
+	top:50%;
+	left:50%;
+	width:100%;
+	color:purple;
+	transform:translateX(-50%) translateY(-50%);
+	text-align:center;
+	margin-top:20px;
+	margin-left:-20px;
+
+}	
+
+.banner_txt{
+	font-size:10px;
+
+}
+
+.banner_titulo{
+	margin-top:100px;
+	font-size:18px;
+	margin-bottom:0;
+
+}
+
+/* estilo coluna de artigos*/
+.info_coluna{
+	background:grey;
+	color:purple;
+	/*este distancia os objetos*/
+	padding:10px;
+	margin-bottom:0px;
+	margin-top:20px;
+	margin-right:7px;
+
+}
+
+
+.info_txt{
+	font-size:13px;
+	margin-bottom:0px;
+}
+
+
+
+.section_titulo{
+	font-size:40px;
+	color:purple;
+}
+
+/* aqui foi deixado relativo para que a 
+imagem podese ficar opaca*/
+.cursos_coluna{
+	position:relative;
+	/*esta margem esta distanciando as
+	umas das outras*/
+	margin-bottom:30px;
+	margin-right:7px;
+
+
+}
+
+/*este referece a parte opaca que 
+tem nas imagems*/
+/*na parte de cima foi deixada relativa
+a imagem, e aqui ira definir as proprie
+dades da opacidade*/
+.cursos_descricao{
+	position:absolute;
+	top:0;
+	left:0;
+	color:purple;
+	/* este esta definindo a opacidade */
+	background: rgba(0,0,0,0.4);
+	width:60%;
+	height:100%;
+	padding:5px;
+
+}
+
+/*area de titulo dentro da area opaca*/
+.cursos_titulo{
+	font-size:23px;
+	margin:5px 0;
+
+}
+
+.cursos_txt{
+	font-size:10px;
+	color:white;
+}
+
+.cursos{
+	text-align:center;
+	font-size:40px;
+	
+}
+
+
+
+.menu_hamburguer{
+	width:20px;
+	margin: 5px 5px;
+}
+
+
+/*este comando quer dizer que ele pega todas
+as class com icon- e coloca - as nesta formatacao,
+pra nao ficar fazendo uma por uma*/
+.social [class^=icon-]{
+	/*aqui define os blocos em linha*/
+	display:inline-block;
+	color:#333;
+	font-size:30px;
+	text-decoration:none;
+	background:white;
+	padding:15px;
+	/*aqui aredondou a borda em 50% */
+	border-radius:50%;
+	width:50px;
+	height:50px;
+	line-height:40px;
+}
+
+.footer{
+	background:black;
+	color:white;
+	padding:10px;
+	text-align:center;
+}
+
+
+
+/*MEDIA QUERY*/
+/*isto define estilos defirentes
+para determinados tamanhos de telas*/
+@media(min-width:480px){
+	.logo{
+		font-size:40px;
+	}
+
+	.icon-menu{
+	display:block;
+	width:33px;
+	height:33px;
+	background:purple;
+	border-radius:5px;
+	cursor:pointer;
+
+}
+
+.nav{
+	width:195px;
+}
+
+.menu_hamburguer{
+	width:23px;
+	margin: 5px 5px;
+}
+
+	.banner_titulo{
+		font-size:25px;
+		margin-top:95px;
+	}
+
+
+	/*aqui por conta do media query o texto
+	que esta la no index em banner_txt so 
+	aparece quando 
+	chegar no tamanho definido pela midia 
+	query*/
+	.banner_txt{
+		
+		font-size:14px;
+		margin:0;
+		margin-top:10px;
+	}
+
+	/*este deixou as tres imagems uma do lado 
+	da outra com espacos*/
+	/*isto so ira acontecer quando ele estiver 
+	na resolucao definida pelo media querry*/
+	.info, .cursos{
+		display:flex;
+		justify-content:space-between;
+		margin-top:-55px;
+	}
+
+
+
+	.info_coluna{
+		width:32%;
+	}
+
+	.info_img{
+		height:140px;
+	}
+
+	.info_titulo{
+		font-size:30px;
+		margin:5px 0;
+	}
+
+	.info_txt{
+		font-size:17px;
+	}
+
+	.section_titulo{
+		width:100%;
+		font-size:45px;
+
+		
+
+	}
+
+	.cursos{
+		/*deixa os objetos um do lado do outro*/
+		flex-wrap:wrap;
+		margin-top:0;
+	}
+
+	.cursos_coluna{
+		width:48%;
+
+	}
+	/* rodapé*/
+	.footer .social[class^="icon-"]{
+		margin:0 10px;
+	}
+
+	}
+
+	@media(min-width:768px){
+		.image-banner{
+			height:350px;
+		}
+
+		.info_img{
+			height:230px;
+		}
+		.logo{
+			font-size:45px;
+		}
+
+		.menu_hamburguer{
+		width:25px;
+		margin: 5px 5px;
+}		
+		.icon-menu{
+		display:block;
+		width:35px;
+		height:35px;
+		background:purple;
+		border-radius:5px;
+		cursor:pointer;
+
+}		
+		.nav{
+		margin-top:15px;
+		width:217px;
+}
+
+		.menu_link{
+			padding:17px;
+			font-size:12px;
+		}
+
+		.banner_titulo{
+		font-size:30px;
+		margin-top:95px;
+
+	}	
+		.banner_txt{
+			font-size:17px;
+			margin-right:30px;
+
+		}
+
+	
+
+		.cursos_titulo{
+			font-size:45px;
+		}
+
+		.cursos_txt{
+			font-size:17px;
+		}
+
+		
+
+	}
+
+	@media(min-width:1024px){
+
+			.cursos_img{
+			width:700px;
+			
+		}
+		.image-banner{
+			height:400px;
+		}
+		.conteudo{
+			width:1000px;
+		}
+
+		.section_titulo{
+			font-size:40px;
+			margin:30px 0;
+		}
+
+		.nav{
+			/*este deixa a posição estatica*/
+			position:static;
+			width:auto;
+			margin-top:-7px;
+
+		}
+
+		.menu{
+			display:flex;
+		}
+
+		/*este retira o menu hamburguer*/
+		.icon-menu{
+			display:none;
+		}
+
+		.menu_link{
+			/*este tira a cor do menu*/
+			background:none;
+			font-size:20px;
+		}
+
+		/* elinina a cor vermelha do cabecario*/
+		.header{
+			background:none;
+		}
+
+		.select{
+			color:white;
+		
+		}
+
+		.banner_titulo{
+			font-size:35px;
+		}
+
+		.banner-txt{
+			font-size:25px;
+		}
+
+		.info{
+			margin-top: -50px;
+		}
+
+		.info_coluna{
+			padding:10px;
+		}
+
+		.info_titulo{
+			font-size:30px;
+			text-align:center;
+
+		}
+
+		.info_txt{
+			font-size:15px;
+		}
+
+		
+
+		.cursos_titulo{
+			font-size:30px;
+		}
+
+		.cursos_txt{
+			font-size:15px;
+		}
+
+		@media(min-width:1280px){
+			.conteudo{
+				width:1200px;
+				
+			}
+
+			
+			.image-banner{
+				height:500px;
+			}
+
+			.banner_titulo{
+				margin-top:200px;
+			}
+
+			.banner .conteudo{
+				top:40%;
+			}
+
+			.info{
+				margin-top:-35px;
+			}
+
+			.banner_titulo{
+					margin-right:450px;
+					font-size:40px;
+
+			}
+
+			.banner_txt{
+				margin-right:450px;
+				font-size:17px;
+
+			}
+
+			.section_titulo{
+				font-size:50px;
+
+
+			}
+
+			.info_img{
+				height:300px;
+			}
+
+			.logo{
+				font-size:50px;
+			}
+
+			.menu_link{
+					font-size:21px;
+			}
+
+			.menu{
+				margin-right:-50px;
+				
+			}
+			
+			.cursos{
+				margin-left:12px;
+			}
+		
+			.footer .conteudo{
+				margin-left:65px;
+			}
+
+
+
+			}
+
+		}
+ 
